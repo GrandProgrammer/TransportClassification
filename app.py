@@ -25,7 +25,7 @@ if file:
         img = PILImage.create(file)
 
         # MODEL....
-        model = load_learner('transport_model.pkl')
+        model = load_learner('transport_mnodel.pkl')
 
         # PREDICTION
         prediction, prediction_id, probability = model.predict(img)  # model.predict(filename)
