@@ -1,15 +1,14 @@
 # PYTHON -M VENV VENV
-import platform
 
+import platform
 import streamlit as st
 from fastai.vision.all import *
 import plotly.express as px
 import pathlib
-import platform
+
 
 plt = platform.system()
-if plt =='Windows':  
-        pathlib.WindowsPath = pathlib.PosixPath
+if plt =='Linux': pathlib.WindowsPath = pathlib.PosixPath
 
 
 # TITLE
@@ -26,7 +25,7 @@ if file:
         img = PILImage.create(file)
 
         # MODEL....
-        model = load_learner('transport_mnodel.pkl')
+        model = load_learner('transport_model.pkl')
 
         # PREDICTION
         prediction, prediction_id, probability = model.predict(img)  # model.predict(filename)
